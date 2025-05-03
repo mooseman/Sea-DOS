@@ -3,6 +3,8 @@
 This project, forked from uefi-dev, aims to create a public-domain 64-bit 
 DOS-like OS. 
 
+Status (as at 3rd May 2025) - Builds (for me) but boot still drops to UEFI shell. 
+
 Acknowledgement
 
 Sea-DOS would not be possible without the excellent work of queso-fuego, 

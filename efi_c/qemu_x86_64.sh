@@ -1,16 +1,18 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -e
 
-# Sendin' Out a TEST O S
+IMG=$1        # ../build/sea-dos.img
+CODE=$2       # /usr/share/OVMF/OVMF_CODE_4M.fd
+VARS=/usr/share/OVMF/OVMF_VARS_4M.fd
+
 qemu-system-x86_64 \
--drive format=raw,file=../UEFI-GPT-image-creator/test.hdd \
--bios ../UEFI-GPT-image-creator/bios64.bin \
--m 256M \
--vga std \
--display gtk,gl=on,zoom-to-fit=off,window-close=on \
--name TESTOS \
--machine q35 \
--usb \
--device usb-mouse \
--rtc base=localtime \
--net none
+  -machine q35 \
+  -m 256M \
+  -drive if=pflash,format=raw,unit=0,readonly=on,file="$CODE" \
+  -drive if=pflash,format=raw,unit=1,file="$VARS" \
+  -drive if=ide,media=disk,format=raw,file="$IMG" \
+  -serial stdio \
+  -vga std -display gtk,gl=on,zoom-to-fit=off,window-close=on \
+  -rtc base=localtime -net none
+
 

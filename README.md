@@ -1,4 +1,21 @@
+# Sea-DOS
+
+This project, forked from uefi-dev, aims to create a public-domain 64-bit 
+DOS-like OS. 
+
+Acknowledgement
+
+Sea-DOS would not be possible without the excellent work of queso-fuego, 
+whose uefi-dev code it is forked from. 
+I also want to give huge thanks to him for making uefi-dev "public domain" 
+under the Unlicense. 
+Sea-DOS too will be under the Unlicense. 
+
+Queso-fuego's original README for uefi-dev is shown below. 
+
+
 # uefi-dev
+
 This repo was originally to go along with the UEFI Development Series: 
 https://www.youtube.com/playlist?list=PLT7NbkyNWaqZYHNLtOZ1MNxOt8myP5K0p
 
